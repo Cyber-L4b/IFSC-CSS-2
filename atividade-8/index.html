@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade - Layout Assimétrico</title>
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: sans-serif;
+            padding: 20px;
+            background-color: #eef2f5;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Contentor principal em Grid */
+        .grid-container {
+            display: grid;
+            width: 100%;
+            max-width: 900px;
+            height: 500px;
+            grid-template-columns: 80px 1fr 1fr 1.2fr; /* Coluna lateral e colunas de conteúdo */
+            grid-template-rows: repeat(3, 1fr);        /* 3 linhas principais */
+            gap: 10px;
+            background-color: #ffffff;
+            padding: 15px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            border-radius: 8px;
+
+            /* Desenhando o layout com áreas */
+            grid-template-areas: 
+                "lateral bloco1 bloco1 bloco2"
+                "lateral bloco3 bloco4 bloco2"
+                "lateral bloco5 bloco6 bloco2";
+        }
+
+        /* Caixa lateral com os círculos */
+        .lateral {
+            grid-area: lateral;
+            background-color: #ffffff;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+            padding: 10px 0;
+            border: 1px solid #e0e0e0;
+            border-radius: 4px;
+        }
+
+        .circulo {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+        }
+
+        /* Cores dos círculos inspiradas na imagem */
+        .c1 { background-color: #f4976c; }
+        .c2 { background-color: #b4c69d; }
+        .c3 { background-color: #d2c4e9; }
+        .c4 { background-color: #f7931e; }
+
+        /* Blocos de conteúdo */
+        .bloco1 {
+            grid-area: bloco1;
+            background-color: #b5c7d3;
+            border-radius: 4px;
+        }
+
+        .bloco2 {
+            grid-area: bloco2;
+            background-color: #f2a63a;
+            border-radius: 4px;
+        }
+
+        .bloco3 {
+            grid-area: bloco3;
+            background-color: #d1a3a4;
+            border-radius: 4px;
+        }
+
+        .bloco4 {
+            grid-area: bloco4;
+            background-color: #d5e1df;
+            border-radius: 4px;
+        }
+
+        .bloco5 {
+            grid-area: bloco5;
+            background-color: #f3b09d;
+            border-radius: 4px;
+        }
+
+        .bloco6 {
+            grid-area: bloco6;
+            background-color: #a8c373;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="grid-container">
+        <!-- Coluna lateral com círculos -->
+        <div class="lateral">
+            <div class="circulo c1"></div>
+            <div class="circulo c2"></div>
+            <div class="circulo c3"></div>
+            <div class="circulo c4"></div>
+        </div>
+
+        <!-- Blocos do layout -->
+        <div class="bloco1"></div>
+        <div class="bloco2"></div>
+        <div class="bloco3"></div>
+        <div class="bloco4"></div>
+        <div class="bloco5"></div>
+        <div class="bloco6"></div>
+    </div>
+
+</body>
+</html>
