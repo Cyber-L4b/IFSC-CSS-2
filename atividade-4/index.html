@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade</title>
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: sans-serif;
+            padding: 10px;
+            background-color: #f0f0f0;
+        }
+
+        .layout-container {
+            display: grid;
+            grid-template-columns: 150px 1fr 150px;
+            grid-template-rows: auto auto auto auto; 
+            grid-template-areas: 
+                "header header header"
+                "left   centro right"
+                "left   baixo  right"
+                "footer footer footer";
+            gap: 10px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        header {
+            grid-area: header;
+            background-color: orange;
+            height: 60px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+        }
+
+        .left-aside {
+            grid-area: left;
+            background-color: green;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-weight: bold;
+        }
+
+        .right-aside {
+            grid-area: right;
+            background-color: orange;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+        }
+
+        .centro-wrapper {
+            grid-area: centro;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .banner {
+            background-color: red;
+            height: 80px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-weight: bold;
+        }
+
+        .main-content {
+            background-color: #4da6ff;
+            min-height: 400px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: black;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .low-content {
+            grid-area: baixo;
+            background-color: green;
+            height: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-weight: bold;
+        }
+
+        footer {
+            grid-area: footer;
+            background-color: #4da6ff;
+            height: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+        }
+
+
+        @media screen and (max-width: 768px) {
+            .layout-container {
+                grid-template-columns: 1fr; 
+                grid-template-areas: 
+                    "header"
+                    "banner"
+                    "left"
+                    "centro"
+                    "right"
+                    "baixo"
+                    "footer";
+            }
+
+            .banner {
+                grid-area: banner;
+            }
+            .centro-wrapper {
+                grid-area: centro;
+            }
+            .left-aside {
+                grid-area: left;
+                height: 50px;
+            }
+            .right-aside {
+                grid-area: right;
+                height: 50px;
+            }
+            .low-content {
+                grid-area: baixo;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="layout-container">
+        <header>Header</header>
+        
+        <aside class="left-aside">Left Aside</aside>
+        
+        <div class="centro-wrapper">
+            <div class="banner">Banner</div>
+            <div class="main-content">
+                Main Content
+            </div>
+        </div>
+        
+        <aside class="right-aside">Right Aside</aside>
+        
+        <div class="low-content">Low Content</div>
+        
+        <footer>Footer</footer>
+    </div>
+    
+</body>
+</html>
