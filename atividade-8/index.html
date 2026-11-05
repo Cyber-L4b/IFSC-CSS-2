@@ -22,28 +22,27 @@
             align-items: center;
         }
 
-        /* Contentor principal em Grid */
         .grid-container {
             display: grid;
             width: 100%;
             max-width: 900px;
             height: 500px;
-            grid-template-columns: 80px 1fr 1fr 1.2fr; /* Coluna lateral e colunas de conteúdo */
-            grid-template-rows: repeat(3, 1fr);        /* 3 linhas principais */
+            grid-template-columns: 80px 1fr 1fr 1.2fr; 
+            grid-template-rows: repeat(3, 1fr);        
             gap: 10px;
             background-color: #ffffff;
             padding: 15px;
             box-shadow: 0 4px 10px rgba(0,0,0,0.1);
             border-radius: 8px;
 
-            /* Desenhando o layout com áreas */
+            
             grid-template-areas: 
                 "lateral bloco1 bloco1 bloco2"
                 "lateral bloco3 bloco4 bloco2"
                 "lateral bloco5 bloco6 bloco2";
         }
 
-        /* Caixa lateral com os círculos */
+        
         .lateral {
             grid-area: lateral;
             background-color: #ffffff;
@@ -61,14 +60,12 @@
             height: 20px;
             border-radius: 50%;
         }
-
-        /* Cores dos círculos inspiradas na imagem */
+    
         .c1 { background-color: #f4976c; }
         .c2 { background-color: #b4c69d; }
         .c3 { background-color: #d2c4e9; }
         .c4 { background-color: #f7931e; }
 
-        /* Blocos de conteúdo */
         .bloco1 {
             grid-area: bloco1;
             background-color: #b5c7d3;
@@ -109,7 +106,6 @@
 <body>
 
     <div class="grid-container">
-        <!-- Coluna lateral com círculos -->
         <div class="lateral">
             <div class="circulo c1"></div>
             <div class="circulo c2"></div>
@@ -117,7 +113,6 @@
             <div class="circulo c4"></div>
         </div>
 
-        <!-- Blocos do layout -->
         <div class="bloco1"></div>
         <div class="bloco2"></div>
         <div class="bloco3"></div>
